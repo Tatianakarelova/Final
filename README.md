@@ -1,6 +1,6 @@
 # Final
 
-Финальный тестовый проект SkillFactory курса QAP 67
+Финальный тестовый проект SkillFactory курса QAP 67                                                                                                                                                                                 
 pages/base.py содержит реализацию шаблона PageObject для Python
 pages/elements.py содержит вспомогательный класс для определения веб-элементов на веб-страницах
 
