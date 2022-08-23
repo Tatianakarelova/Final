@@ -1,17 +1,38 @@
 # Final
 
-Финальный тестовый проект SkillFactory курса QAP
+Финальный тестовый проект SkillFactory курса QAP 67                                                                                                                                                                                 
+pages/base.py содержит реализацию шаблона PageObject для Python
+pages/elements.py содержит вспомогательный класс для определения веб-элементов на веб-страницах
 
-Автоматизированное тестирование UI сайта: https://market.yandex.ru/?utm_source_service=web&clid=703&src_pof=703&icookie=kH0ZqnEKOgESFZSmN0ysNkaW2G1vaqVP7nRAMKX0Azta4RC4PG910WAKt0i8lAWN85HqAILD7e9GWgp5k8l6CTodk4A%3D&baobab_event_id=l6t2f59xz8с использованием PyTest и Selenium.
+Как запускать тесты:
+Установить все внешние зависимости командой
+pip install -r requirements.txt
 
-С тест-кейсами можно ознакомиться по ссылке: https://docs.google.com/spreadsheets/d/1lSbJIRyfpjAPeLcxADUKU7Bgwi8yyOezF_JbeDqSkuc/edit?usp=sharing
-В папке pages в файле base_page.py находится конструктор webdriver.
-В папке pages в файлах cart_page.py, main_page.py, search_page.py находятся методы для тестируемых страниц.
+Скачать версию Selenium WebDriver, совместимую с вашим браузером
+(тесты проводились в браузере Microsoft Edge)
 
-В папке pages в файле "locators.py находятся все локаторы.
+В файле conftest.py в фикстуре driver изменить значение driver на ваш Selenium WebDriver и указать путь к файлу драйвера
 
-В корне проекта в файле conftest.py находится фикстура с функцией открытия и закрытия браузера.
+Запускайте тесты командами:
 
-В корне проекта в файле pytest.ini зарегистрированны метки маркеровок тестов.
+Запуск всех тестов:
+py.test -v -l
 
-В корне проекта в файлах test_cart_page.py, test_main_page.py, test_search_page.py находятся тесты. Все тесты помечены номером который совпадает с номером тест-кейса в файле:https://docs.google.com/spreadsheets/d/1lSbJIRyfpjAPeLcxADUKU7Bgwi8yyOezF_JbeDqSkuc/edit?usp=sharing  Во всех файлах с тестами находятся закомментированные команды для запуска тестов из командной строки (# pytest -v --tb=line test_main_page.py)
+Некоторые тесты помечены маркером "smoke" (тесты для smoke-тестирвоания) и "parametrize" (тесты с параметризацией):
+py.test -v -l -m "имя маркера"
+пример: py.test -v -l -m "smoke"
+
+Остальные тесты сгруппированны по страницам. Запускать команадами:
+py.test имя_файла_с_тестами -v -l
+пример: py.test test_main_page.py -v -l
+
+
+Тесты для проверки
+Главной страницы
+Поле поиска
+Карточка товара
+Авторизация товара
+Корзина
+Фильтры поиска
+Страница "контакты"
+Оплата товара
