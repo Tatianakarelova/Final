@@ -2,7 +2,7 @@ from .base_page import BasePage
 from selenium.webdriver.common.action_chains import ActionChains
 from .locators import BasePageLocators, MainPageLocators
 
-url_main_page = "https://besttea.ru/"
+url_main_page = "https://www.velocityk.ru/"
 
 class MainPage(BasePage):
 
